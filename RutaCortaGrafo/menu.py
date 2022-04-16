@@ -3,6 +3,7 @@ import time
 import grafo as g
 import grafoQuemado as gq
 
+#Se muestra el menú
 def escogerOpcion():
     print("-----------------------------------------")
     print("1. Encontrar la ruta más corta entre dos vertices de un gráfo")
@@ -11,7 +12,7 @@ def escogerOpcion():
     opcion = int(input("Escoja una opción:"))
     return opcion
 
-
+#Según la opción se activa un método
 def activarOpcion():
     salir= False
     opcionMenu = escogerOpcion()
@@ -50,6 +51,7 @@ def fin():
     print("1")
     time.sleep(1)
 
+#Cuenta regresiva para que la presentación de los resultados sea menos brusca
 def cuentaRegresiva():
     print("Buscando resultado...")
     time.sleep(2)
