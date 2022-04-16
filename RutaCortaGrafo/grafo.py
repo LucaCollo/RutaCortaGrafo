@@ -19,7 +19,7 @@ def rutaMasCorta():
     listaColumnas = np.array([])
     listaPeso = np.array([])
     for v in range(cantVertices):
-        cantAristas = int(input(f"Cuántos vertices son adyancentes  a {listaVertices[v]}? "))
+        cantAristas = int(input(f"Cuántos vertices son adyancentes a {listaVertices[v]}? "))
         for i in range(cantAristas):
             listaFilas = append(listaFilas, listaVertices[v])
             verticeUnion = input(f"Ingrese el vertice n{[i + 1]} que está unído al vertice {listaVertices[v]}:  ")
