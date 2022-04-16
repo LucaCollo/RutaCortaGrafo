@@ -3,6 +3,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import numpy as np
 from numpy import append
+import menu as m
 
 def rutaMasCorta():
     # # Definir el número de nodos
@@ -38,18 +39,17 @@ def rutaMasCorta():
     for i in range(0, np.size(listaFilas)):
         G.add_weighted_edges_from([(listaFilas[i], listaColumnas[i], listaPeso[i])])
     # Establecer diseño de red
-    pos = nx.shell_layout(G)
+    disenoG = nx.shell_layout(G)
     # Dibuja una imagen de red
-    nx.draw(G, pos, with_labels=True, node_color='red', edge_color='blue', node_size=550, alpha=0.5)
+    nx.draw(G, disenoG, with_labels=True, node_color='red', edge_color='blue', node_size=550, alpha=0.5)
     edge_labels = nx.get_edge_attributes(G, 'weight')
-    nx.draw_networkx_edge_labels(G, pos, edge_labels)
-    # plt.draw()
-    # plt.pause(5)  # Segundos de intervalo
-    # plt.close()
+    nx.draw_networkx_edge_labels(G, disenoG, edge_labels)
     plt.show()
+
 
     # dijkstra método para encontrar el camino más corto con dijkstra_path
     inicio, final = input("Ingrese el nombres de los vectores de inicio y fin separados por espacios:").split()
+    m.cuentaRegresiva()
     # Ruta más corta con nodos
     rutaMasCorta = nx.dijkstra_path(G, source=inicio, target=final, weight='weight')
     print("Ruta más corta: ", rutaMasCorta)
